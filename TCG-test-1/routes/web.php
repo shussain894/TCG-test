@@ -16,5 +16,3 @@ Route::get('/', function () {
      return view('welcome', ['customers' => $customers]);
 })->name('welcome');
 
-
-// Route::post('/customer/store', [CustomerController::class, 'store'])->name('customer.store');
