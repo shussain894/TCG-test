@@ -60,6 +60,7 @@ php artisan db:seed
 ```
 
 10. Access the application in your web browser:
-```
+
 http://localhost:80
-```
+
+Happy coding!
