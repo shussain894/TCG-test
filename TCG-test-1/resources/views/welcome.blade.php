@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome</title>
-    <!-- <link rel="stylesheet" type="text/css" href="{{ url('/css/style.css') }}" />  -->
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
 </head>
 
@@ -13,8 +12,21 @@
     <div class="container">
         <p>Here are the customer entries:</p>
 
+        <!-- Filter form -->
+        <form action="{{ route('customer.index') }}" method="GET">
+            <div class="form-group">
+                <label for="filter">Filter By:</label>
+                <select name="filter" id="filter" class="form-control">
+                    <option value="">-- Select Filter --</option>
+                    <option value="name">Name</option>
+                    <option value="organisation">Organisation</option>
+                    <option value="date_of_birth">Date of Birth</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Apply Filter</button>
+        </form>
+
         <table>
-            <!-- Table header -->
             <thead>
                 <tr>
                     <th>Name</th>
@@ -38,11 +50,8 @@
             </tbody>
         </table>
 
-        <!-- {{ $customers->links() }} -->
-
         <!-- Navigation button to the create page -->
         <a href="{{ route('customer.create') }}" class="btn btn-primary mt-3">Create Customer</a>
-
     </div>
 </body>
 

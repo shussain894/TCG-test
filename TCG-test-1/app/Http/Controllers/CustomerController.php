@@ -8,16 +8,25 @@ use Illuminate\Support\Facades\Log;
 
 class CustomerController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        // Retrieves all customers from the database
-        $customers = Customer::all();
+        $filter = $request->input('filter');
 
-        // Passes the customers data to the 'customer.index' view
-        return view('index', ['customers' => $customers]);
+        $query = Customer::query();
+
+        // Apply filters based on user selection
+        if ($filter === 'name') {
+            $query->orderBy('name');
+        } elseif ($filter === 'organisation') {
+            $query->orderBy('organisation');
+        } elseif ($filter === 'date_of_birth') {
+            $query->orderBy('date_of_birth');
+        }
+
+        $customers = $query->get();
+
+        return view('welcome', compact('customers'));
     }
-
-    // test
 
     public function create()
     {
