@@ -5,19 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Customer;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Pagination\Paginator;
-
 
 class CustomerController extends Controller
 {
     public function index()
     {
-        $customers = Customer::paginate(10);
-        // $customers = DB::table('customers')->where('id',$user_id)->paginate(10);
-    
-        return view('welcome', compact('customers'));
+        // Retrieves all customers from the database
+        $customers = Customer::all();
+
+        // Passes the customers data to the 'customer.index' view
+        return view('index', ['customers' => $customers]);
     }
-    
 
     public function create()
     {

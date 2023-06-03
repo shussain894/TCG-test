@@ -38,7 +38,7 @@
             </tbody>
         </table>
 
-        {{ $customers->links() }}
+        <!-- {{ $customers->links() }} -->
 
         <!-- Navigation button to the create page -->
         <a href="{{ route('customer.create') }}" class="btn btn-primary mt-3">Create Customer</a>
