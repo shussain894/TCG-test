@@ -10,7 +10,7 @@
 
 <body>
     <div class="container">
-        <p>Here are the customer entries:</p>
+        <h2>Here are the customer entries:</h2>
 
         <!-- Filter form -->
         <form action="{{ route('customer.index') }}" method="GET">
