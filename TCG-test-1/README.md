@@ -1,6 +1,6 @@
 # Laravel Project
 
-This is a Laravel project that utilises Docker and PHP. Follow the instructions below to set up and run the project on your local machine.
+This is a Laravel project to view and add customer entries, it utilises PHP, Docker and a MySQL database. Follow the instructions below to set up and run the project on your local machine.
 
 ## Prerequisites
 
